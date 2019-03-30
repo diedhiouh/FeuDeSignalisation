@@ -5,17 +5,25 @@ public class Panneau {
 	//Etat du feu de signalisation
 	
 	public EtatFeu feu;
+	public  String couleur="Vert";
+	public int niveau=1;
+	
 	public int getNiveau() {
 		return niveau;
 	}
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 	}
-	public int niveau;
 	
+	public String getCouleur() {
+		return couleur;
+	}
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
 	public Panneau(EtatFeu feu) {
 	    super();
-	    this.feu = new FeuVert();
+	    this.feu = feu;
     }
 	public EtatFeu getFeu() {
 		return feu;

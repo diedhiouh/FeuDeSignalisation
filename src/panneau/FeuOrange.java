@@ -1,7 +1,7 @@
 package panneau;
 
 public class FeuOrange extends EtatFeu{
-	protected  String feu="orange";
+	protected final String feu="orange";
 	public FeuOrange() {
 		// TODO Auto-generated constructor stub\
 		super();
@@ -10,13 +10,15 @@ public class FeuOrange extends EtatFeu{
 	@Override
     public String Niveau() {
 	    // TODO Auto-generated method stub
-	    return "orange";
+	    return "Orange";
     }
 
 	@Override
     public void ChangeNiveau(Panneau p) {
 	    // TODO Auto-generated method stub
 	    p.setFeu(new FeuRouge());
+	    p.setCouleur("Rouge");
+	    p.setNiveau(3);
     }
 
 	
