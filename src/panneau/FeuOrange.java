@@ -1,25 +1,31 @@
 package panneau;
 
+import java.awt.Color;
+
 public class FeuOrange extends EtatFeu{
-	protected final String feu="orange";
+	
+	protected  Color feu=Color.ORANGE;
 	public FeuOrange() {
 		// TODO Auto-generated constructor stub\
 		super();
 	}
 
+	
 	@Override
-    public String Niveau() {
+    public Color Niveau() {
 	    // TODO Auto-generated method stub
-	    return "Orange";
+	    return feu;
     }
 
 	@Override
     public void ChangeNiveau(Panneau p) {
 	    // TODO Auto-generated method stub
 	    p.setFeu(new FeuRouge());
-	    p.setCouleur("Rouge");
-	    p.setNiveau(3);
+	    feu=Color.RED;
+	    p.setCouleur(feu);
     }
+
+
 
 	
 
