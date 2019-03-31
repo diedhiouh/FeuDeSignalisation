@@ -88,7 +88,7 @@ public class Panneau extends JFrame{
 		
 		FeuVert f=new FeuVert();
 	   if(e.getSource()==vert){
-		   System.out.println("VERT clique");
+//		   System.out.println("VERT clique");
 		   f.ChangeNiveau(pan);
 		   mob.setCoulx(123);
 		   mob.setCouly(460);
@@ -96,7 +96,7 @@ public class Panneau extends JFrame{
 		   
 	   }
 	   if(e.getSource()==orange){
-		   System.out.println("orange clique");
+//		   System.out.println("orange clique");
 		   f.ChangeNiveau(pan);
 		   mob.setCoulx(123);
 		   mob.setCouly(382);
@@ -104,7 +104,7 @@ public class Panneau extends JFrame{
 		   mob.setColo(f.Niveau());
 	   }
 	   if(e.getSource()==rouge){
-		   System.out.println("rouge clique");
+//		   System.out.println("rouge clique");
 		   f.ChangeNiveau(pan);
 		   mob.setCoulx(123);
 		   mob.setCouly(306);
@@ -121,39 +121,39 @@ public class Panneau extends JFrame{
 		int Y=mob.getPostY();
 		int a=this.getWidth();
 		int b=this.getHeight();
-		int panne=545;
+		
+		//Point du panneau de la route
+		int panne=540;
 		for(int i=0;i<a;i++){
 	
 			if(mob.getColo()==Color.GREEN){
-				mob.setPostX(X+=10);
+				mob.setPostX(X+=8);
 				mob.repaint();
 				if(X>=a){
 					break;
 				}
 			}
 			if(mob.getColo()==Color.ORANGE && (mob.getPostY()-panne<5)){
-				mob.setPostX(X+=5);
+				mob.setPostX(X+=3);
 				mob.repaint();
 				if(X>=a){
 					break;
 				}
 			}
 			if(mob.getColo()==Color.RED && (mob.getPostX()-(panne)<5 )){
-				mob.setPostX(X+=5);
+				mob.setPostX(X+=3);
 				mob.repaint();
 				if(X>=a){
 					break;
 				}
 			}
-			
-			
 			try {
-		        Thread.sleep(50);
+		        Thread.sleep(100);
 	        } catch (InterruptedException e) {
 		        // TODO Auto-generated catch block
 		        e.printStackTrace();
 	        }
-		System.out.println(mob.getPostX()+" Y=>"+mob.getPostY());
+//		System.out.println(mob.getPostX()+" Y=>"+mob.getPostY());
 		}
 	
 	}

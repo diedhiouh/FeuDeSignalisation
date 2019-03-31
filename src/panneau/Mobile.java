@@ -82,6 +82,11 @@ public class Mobile extends JPanel{
 		g.drawOval(580, 150, 15, 15);
 		g.setColor(Color.WHITE);
 		g.drawLine(600, 170, 600, 200);
+		
+		
+		//Texte d'incation de la commande des feu
+		g.setColor(Color.BLACK);
+		g.drawString("Changer les feux de signalisation ici ->", 200, 30);
 	}
 	
 	public Mobile() {
