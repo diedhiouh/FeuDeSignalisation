@@ -24,7 +24,6 @@ public class RunAppli {
 		
 //		System.out.println(o.Niveau());
 		
-		//Win fenetre=new Win();
 	}
 
 }
