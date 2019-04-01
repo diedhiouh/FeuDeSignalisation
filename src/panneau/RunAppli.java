@@ -9,14 +9,14 @@ public class RunAppli {
 		FeuVert f=new FeuVert();
 		FeuOrange o=new FeuOrange();
 		
-		System.out.println(pan.couleur);
+		System.out.println(pan.getCouleur());
 		
 		f.ChangeNiveau(pan);
-		System.out.println(pan.couleur);
+		System.out.println(pan.getCouleur());
 		
-		System.out.println(pan.couleur);
+		System.out.println(pan.getCouleur());
 		o.ChangeNiveau(pan);
-		System.out.println(pan.couleur);
+		System.out.println(pan.getCouleur());
 		
 //		System.out.println(o.Niveau());
 		

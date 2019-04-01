@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 public class Mobile extends JPanel{
 	
 	//Variable couleur feux lumineux
-	public int coulx=123;
+	public int coulx=12;
 	public int couly=460;
 	public Color colo=Color.GREEN;
 	
@@ -38,7 +38,7 @@ public class Mobile extends JPanel{
 
 	//Variable elements route et image
 	public int postX=-30;
-	public int postY=170;
+	public int postY=165;
 	
 	public int getPostX() {
 		return postX;
@@ -56,6 +56,21 @@ public class Mobile extends JPanel{
 		
 //		g.fillRect(600, postX, 80, 100);
 		
+		//DECORATION
+		try{
+			Image img= ImageIO.read(new File("images/dec.jpg"));
+			Image img1= ImageIO.read(new File("images/dec1.png"));
+			Image img2= ImageIO.read(new File("images/crre.jpg"));
+			Image img3= ImageIO.read(new File("images/arbre.jpg"));
+			g.drawImage(img,1,1,this);
+			g.drawImage(img1,180,10,this);
+			g.drawImage(img2,230,200,this);
+			g.drawImage(img3,680,0,this);
+		}catch(IOException e){
+			e.printStackTrace();
+			System.out.println(e);
+				}
+				
 		//Fonction de tracage de route
 		g.setColor(Color.BLACK);
 		g.fillRect(-30, 168, 900, 100);
@@ -63,8 +78,8 @@ public class Mobile extends JPanel{
 		
 		//Image du panneau lumineux
 		try{
-			Image img= ImageIO.read(new File("feux.jpg"));
-			g.drawImage(img,10,280,this);
+			Image img= ImageIO.read(new File("images/feux.jpg"));
+			g.drawImage(img,-100,280,this);
 		}catch(IOException e){
 			e.printStackTrace();
 			System.out.println(e);
@@ -74,19 +89,29 @@ public class Mobile extends JPanel{
 		g.setColor(colo);
 		g.fillOval(coulx, couly, 70, 70);
 	
-		g.setColor(Color.white);
-		g.fillOval(postX, postY, 50, 50);
+		//Dessin du l'objet mobile
+//		g.setColor(Color.white);
+		//g.fillOval(postX, postY, 50, 50);
+		try{
+			Image img= ImageIO.read(new File("images/voiture.png"));
+			g.drawImage(img,postX,postY,this);
+		}catch(IOException e){
+			e.printStackTrace();
+			System.out.println(e);
+		}
 		
 		//Panneau de Signalisation de la route
 		g.setColor(Color.red);
-		g.drawOval(580, 150, 15, 15);
+		g.fillOval(580, 150, 15, 15);
 		g.setColor(Color.WHITE);
 		g.drawLine(600, 170, 600, 200);
 		
 		
 		//Texte d'incation de la commande des feu
 		g.setColor(Color.BLACK);
-		g.drawString("Changer les feux de signalisation ici ->", 200, 30);
+		g.drawString("Changer les feux de signalisation ici ->", 210, 30);
+		
+		
 	}
 	
 	public Mobile() {
